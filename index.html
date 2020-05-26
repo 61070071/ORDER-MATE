@@ -1,109 +1,309 @@
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="shortcut icon" href="logo.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/icn-256.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/icn-256.png">
+  <link rel="apple-touch-icon" href="assets/icn-256.png">
+  <meta name="apple-mobile-web-app-title" content="CheckBill">
+
+</head>
+<title>Order Mate</title>
 
 
-  <body style="background: #b5b5b5;">
-<mobile>
-  <div class="mobile-status-bar">
-    <img src="https://i.imgur.com/XSqz2K4.png" alt="">
-  </div>
+<body style="background: #b5b5b5;">
+  <mobile>
 
-  <div class='mobile-container text-center'>
+    <div class='mobile-container text-center'>
 
-    <div id="page-1">
-      <button class="btn btn-info" disabled style="font-size: 2rem; margin-top: 5%; width: 60%;">ORDER MATE</button>
-      <img class="roommate" src="https://cdn.discordapp.com/attachments/624574683832123392/693026631564132352/high-five.png" alt="">
-      <button onclick="mockupClick('page-1','page-2')" class="btn btn-dark"
-        style="font-size: 1.5rem; margin-bottom: 10%;">My Room</button>
-      <button class="btn btn-dark" style="font-size: 1.5rem; margin-bottom: 10%;"><del>Create Room</del></button>
-      <button class="btn btn-dark" style="font-size: 1.5rem;"><del>Join Room</del></button>
-    </div>
+      <div id="home">
 
-    <div id="page-2">
+        <img id="roommate" src="logo.png">
+        <!-- <h1 id="logo">ORDER MATE</h1> -->
+        <button onclick="mockupClick('home','Create_Room')" class="btn btn-dark box_button"
+          style="font-size: 1.5rem; margin-bottom: 20px; margin-right: 20px;" disabled><img style="width: 40px;"
+            src="plus.svg"><br>Create Room</button>
+        <button onclick="mockupClick('home','Join_Room')" class="btn btn-dark box_button"
+          style="font-size: 1.5rem; margin-bottom: 20px;" disabled><img style="width: 50px;" src="group.png"><br>Join
+          Room</button>
+        <button onclick="mockupClick('home','MyRoom'),SelectRoomMate()" id="MyRoomBtn" class="btn btn-dark box_button"
+          style="font-size: 1.5rem;">My Room</button>
 
-      <button class="btn btn-dark" style="font-size: 1.5rem; margin-top: 10%;">My Room</button>
-      <div id="myDIV">
+
+      </div>
+      <div id="MyRoom">
+
+        <select class="custom-select text-center" id="select_top"
+          style="font-size: 1.5rem; margin-top: 10%; width: 90%; background-color: #76889a; color: #fff; padding-left: 7.5%;"
+          onchange="Check_Person()">
+        </select>
+        <div class="calander noselect">
+          <div class="cal_head paper-shadow-top-z-2">
+            <button class="button_left" style="margin-left: 1px;margin-top: 13px;">
+              <i class="
+              fa fa-arrow-left"></i></button>
+            <span id="month_label">Month</span>
+            <button class="button_right" style="margin-right: 1px; margin-top: 13px;"><i
+                class="fa fa-arrow-right"></i></button>
+          </div>
+          <div class="cal_body paper-shadow-bottom-z-1">
+            <table style="margin-left: 20px;" class="text-center">
+              <tbody id="cal">
+              </tbody>
+            </table>
+
+          </div>
+
+          <!-- <div class="cal_output paper-shadow-top-z-1">
+            <span id="outputText"></span>
+          </div> -->
         </div>
-      <img onclick="popup()" src="https://cdn.discordapp.com/attachments/624574683832123392/693043520843284510/plus.png"
-        alt="" style="width: 15%; margin-top: 10%;">
+        <button onclick="mockupClick('MyRoom','Edit_Roommate'),show()" class="btn btn-dark"
+          style="margin-top: -5px;">Edit
+          Roommate</button>
+        <button onclick="Add_Work()" class="btn btn-dark"
+          style="margin-top: -5px; margin-left: 10px; padding-left: 25px; padding-right: 25px;">Add Work</button><br>
+        <button onclick="mockupClick('MyRoom','Code_Room')" class="btn btn-dark" style="margin-top: 15px;" disabled>Code
+          Room</button>
+        <div class="text-center" style="margin-top: 107px; background-color: #fff;">
+          <img class="home" src="arrow.png" onclick="mockupClick('MyRoom','home')">
+          <img class="home" src="home1.png" style="margin-left: 50px;" onclick="backToHome()">
+        </div>
 
+      </div>
+      <!-- <div id="add_btn_ToDoList"></div>
+      <img onclick="popup()" src="https://cdn.discordapp.com/attachments/624574683832123392/693043520843284510/plus.png" style="width: 15%; margin-top: 5%;"> -->
+
+      <div id="Status">
+        <button class="btn btn-dark" style="font-size: 1.5rem; margin-top: 5%; width: 80%;">STATUS</button><br>
+        <img class="img_sm"
+          src="https://cdn.discordapp.com/attachments/492332247563632640/711994470337478696/cleaning.png" alt="">
+        <div class="btn btn-light Percent_bar"><button class="btn btn-light Percent_bar_color"
+            style="background: #80EE7C;"></button></div>
+        <button class="btn btn-dark desc" data-toggle="tooltip" data-placement="left" title="ความสะอาดในพื้นห้อง"
+          style="padding-left: 8px;padding-top: 0px;">i</button><br>
+        <img class="img_sm"
+          src="https://cdn.discordapp.com/attachments/492332247563632640/711994491069792276/toilet.png" alt="">
+        <div class="btn btn-light Percent_bar"><button class="btn btn-light Percent_bar_color"
+            style="background: #80EE7C;"></button></div>
+        <button class="btn btn-dark desc" data-toggle="tooltip" data-placement="left" title="ความสะอาดในห้องน้ำ"
+          style="padding-left: 8px;padding-top: 0px;">i</button><br>
+        <img class="img_sm" src="https://cdn.discordapp.com/attachments/492332247563632640/711994463131664384/clean.png"
+          alt="">
+        <div class="btn btn-light Percent_bar"><button class="btn btn-light Percent_bar_color"
+            style="background: #80EE7C;"></button></div>
+        <button class="btn btn-dark desc" data-toggle="tooltip" data-placement="left" title="ความสะอาดของภาชนะ"
+          style="padding-left: 8px;padding-top: 0px;">i</button><br>
+        <img class="img_sm" src="https://cdn.discordapp.com/attachments/492332247563632640/711994498875654144/trash.png"
+          alt="">
+        <div class="btn btn-light Percent_bar"><button class="btn btn-light Percent_bar_color"
+            style="background: #80EE7C;"></button></div>
+        <button class="btn btn-dark desc" data-toggle="tooltip" data-placement="left" title="ความสะอาดของถังขยะ"
+          style="padding-left: 8px;padding-top: 0px;">i</button><br>
+        <img class="img_sm"
+          src="https://cdn.discordapp.com/attachments/492332247563632640/711994508753109143/washing-machine.png" alt="">
+        <div class="btn btn-light Percent_bar"><button class="btn btn-light Percent_bar_color"
+            style="background: #80EE7C;"></button></div>
+        <button class="btn btn-dark desc" data-toggle="tooltip" data-placement="left" title="ความสะอาดของเสื้อผ้า"
+          style="padding-left: 8px;padding-top: 0px;">i</button>
+        <div class="text-center" style="margin-top: 203px; background-color: #fff;">
+          <img class="home" src="arrow.png" onclick="mockupClick('Status','MyRoom')">
+          <img class="home" src="home1.png" style="margin-left: 50px;" onclick="backToHome()">
+        </div>
+
+      </div>
+
+      <div id="Edit_Roommate">
+        <button class="btn btn-dark" style="font-size: 1.5rem; margin-top: 5%; width: 80%;">EDIT ROOMMATE</button><br>
+        <div style="width: 80%; height: 60%; background: #fff; margin-top: 40px; margin-left: 10%;">
+          <div id="AddRoomateInRoom"></div>
+          <!-- ต้นแบบโค้ด -->
+          <!-- <div class="input-group mb-3" style="width: 90%;">
+            <input class="input_color InputBase" type="color" id="Change_color"></input>
+            <input type="text" class="form-control input_person">
+            <div class="input-group-append">
+              <span class="btn_del input-group-text" style="color: #FF5757;">X</span>
+            </div>
+            
+          </div> -->
+          <!-- ต้นแบบโค้ด -->
+        </div>
+        <button class="btn btn-dark"
+          style="margin-top: 20px; padding-left: 30px; padding-right: 30px; margin-right: 20px;"
+          onclick="save(),mockupClick('Edit_Roommate','MyRoom')">Save</button>
+        <button class="btn btn-dark" style="margin-top: 20px;" onclick="addRoomMatePage()">Add Roommate</button>
+        <div class="text-center" style="margin-top: 74px; background-color: #fff;">
+          <img class="home" src="arrow.png" onclick="mockupClick('Edit_Roommate','MyRoom')">
+          <img class="home" src="home1.png" style="margin-left: 50px;" onclick="backToHome()">
+        </div>
+      </div>
+
+      <div id="Code_Room">
+        <button class="btn btn-dark" style="font-size: 1.5rem; margin-top: 5%; width: 80%;">CODE ROOM</button><br>
+        <div class="input-group mb-4" style="margin-top: 50px;">
+          <div class="input-group-prepend">
+            <input class="text-center" type="text" value="Ab4fG2" id="password" readonly
+              style="height: 50px; margin-left: 110px; width: 200px;">
+          </div>
+        </div>
+
+        <button onclick="Copy()" class="btn btn-dark" style="margin-top: 20px;">Copy Code</button>
+        <div class="text-center" style="margin-top: 432px; background-color: #fff;">
+          <img class="home" src="arrow.png" onclick="mockupClick('Code_Room','MyRoom')">
+          <img class="home" src="home1.png" style="margin-left: 50px;" onclick="backToHome()">
+        </div>
+      </div>
+
+      <div id="Join_Room">
+        <button class="btn btn-dark" style="font-size: 1.5rem; margin-top: 5%; width: 80%;">JOIN ROOM</button><br>
+        <div class="input-group mb-4" style="margin-top: 50px;">
+          <div class="input-group-prepend">
+            <input class="text-center" type="text" style="height: 50px; margin-left: 80px; width: 250px;">
+          </div>
+        </div>
+        <button class="btn btn-dark" style="margin-top: 20px;">Join</button>
+        <div class="text-center" style="margin-top: 432px; background-color: #fff;">
+          <img class="home" src="arrow.png" onclick="mockupClick('Join_Room','home')">
+          <img class="home" src="home1.png" style="margin-left: 50px;" onclick="backToHome()">
+        </div>
+      </div>
+
+      <div id="Create_Room">
+        <button class="btn btn-dark" style="font-size: 1.5rem; margin-top: 5%; width: 80%;">CREATE ROOM</button><br>
+        <div style="width: 80%; height: 60%; background: #fff; margin-top: 40px; margin-left: 10%;">
+          <div id="add_btn_ToDoList"></div>
+        </div>
+        <button class="btn btn-dark"
+          style="margin-top: 20px; padding-left: 30px; padding-right: 30px; margin-right: 20px;">Create</button>
+        <button class="btn btn-dark" style="margin-top: 20px;" onclick="AddRoomMate()">Add Roommate</button>
+        <div class="text-center" style="margin-top: 74px; background-color: #fff;">
+          <img class="home" src="arrow.png" onclick="mockupClick('Create_Room','home')">
+          <img class="home" src="home1.png" style="margin-left: 50px;" onclick="backToHome()">
+        </div>
+      </div>
+
+      <!-- divล่างสุดของหน้า -->
     </div>
+
+
     <div id="myModal" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content">
         <div class="modal-header bg-dark">
           <h2 style="margin-top: 1%; font-size: 1.5rem; color: #fff;">To Do List</h2>
-          <span class="close">&times;</span>
+          <span onclick="close_tab()" class="close">&times;</span>
         </div>
         <div class="modal-body container">
 
           <div class="row">
             <div class="col-3">
-              <p style="font-size: 1.3rem; margin: auto;">Who :</p>
+              <label style="font-size: 1.3rem; padding-top: 15px; padding-left: 10px;">Who :</label>
             </div>
             <div class="col">
-              <input type="text" placeholder="WHO">
+              <select class="custom-select" id="selectPeople" style="margin-top: 5%;">
+              </select>
             </div>
           </div>
-
           <div class="row" style="margin-top: 5%;">
             <div class="col-3">
-              <p style="font-size: 1.3rem; margin: auto;">Do :</p>
+              <label style="font-size: 1.3rem; padding-top: 15px; padding-left: 5px;">When :</label>
             </div>
             <div class="col">
-              <input type="text" placeholder="DO">
+              <input id="WhenToDo" class="InputBase" type="date" style="padding-top:5px; padding-bottom: 5px;">
             </div>
           </div>
-
           <div class="row" style="margin-top: 5%;">
             <div class="col-3">
-              <p style="font-size: 1.3rem; margin: auto;">When :</p>
+              <label style="font-size: 1.3rem; padding-top: 15px; padding-left: 10px;">Do :</label>
             </div>
             <div class="col">
-              <input type="text" placeholder="WHEN">
+              <input id="doing" class="InputBase" type="text" style="padding-top:5px; padding-bottom: 5px;">
             </div>
           </div>
 
+
+
           <div class="row" style="margin-top: 5%;">
             <div class="col">
-              <button class="btn btn-success" onclick="clo()" style="width: 100%;">Save</button>
+              <button id="SaveWork" onclick="SaveWork()" class="btn btn-success" style="width: 100%;">Save</button>
             </div>
           </div>
 
         </div>
       </div>
+    </div>
+    <div id="tab_add_roommate" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h2 style="margin-top: 1%; font-size: 1.5rem; color: #fff;">ADD ROOMMATE</h2>
+          <span onclick="close_tab()" class="close">&times;</span>
+        </div>
+        <div class="modal-body container">
+
+          <div class="row">
+            <div class="col-3">
+              <input id="ColorInData" class="input-group InputBase" type="color"
+                style="padding: 2px; width: 45px; height: 45px; margin-left: 50px; margin-top: 5px;"></input>
+            </div>
+            <div class="col">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <input id="NewName" style="margin-left: 20px; margin-top: 10px;" type="text"
+                    class="form-control InputBase" placeholder="Name" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 5%;">
+            <div class="col">
+              <button class="btn btn-success" onclick="AddRoomMate(),show()" style="width: 100%;">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
-  </div>
-</mobile>
+    <div id="SeeWork" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content" style="width: 300px;">
+        <div class="modal-header bg-dark">
+          <h2 style="margin-top: 5px; font-size: 1.3rem; color: #fff;">Work</h2>
+          <span onclick="close_tab()" class="close">&times;</span>
+        </div>
+        <div class="modal-body container">
+
+          <div class="row" style="margin-top: 5%;">
+            <div class="col text-center">
+              <label id="WorkOnDay" type="text" style="padding-top:5px; padding-bottom: 5px;">- - -</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </mobile>
 </body>
-<script>
-  var modal = document.getElementById("myModal");
-  var span = document.getElementsByClassName("close")[0];
-  function popup() {
-    modal.style.display = "block";
-  }
-  function clo() {
-    var btn = document.createElement("INPUT");
-    btn.innerHTML = document.getElementById("myDIV").appendChild(btn);
-    btn.classList.add('mt');
-    modal.style.display = "none";
-  }
-  span.onclick = function () {
-    modal.style.display = "none";
-  }
-
-
-  function mockupClick(pageToHide, pageToShow) {
-    document.querySelector('#' + pageToHide).style.display = "none";
-    document.querySelector('#' + pageToShow).style.display = "block";
-  }
-</script>
+<script src="myscripts.js"></script>
+</html>

@@ -3,16 +3,28 @@ body{
     padding:1em;
     background:#666;
     font-family:sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    
   }
   mobile{
     display:flex;
     flex-flow:column nowrap;
-    background:#D9F0FF;
+    /* background:linear-gradient(to right, #ffc107 0%, #ffd24b 51%, #ffc107 100%); */
+    /* background: url(https://i.pinimg.com/564x/83/4a/58/834a58ce9d90802e9a24f17b2d2bb37d.jpg); */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%), url(https://i.pinimg.com/564x/83/4a/58/834a58ce9d90802e9a24f17b2d2bb37d.jpg);
     margin:auto;
     width:414px;
     height:736px;
     box-shadow:0px 12px 24px #0004;
+    font-family: 'Itim', cursive;
   }
+  .home{
+      width: 40px;
+
+  }
+
   .mobile-status-bar img{
     width:100%;
   }
@@ -31,17 +43,19 @@ body{
     padding:1em;
     box-sizing:border-box;
   }
-  button{
-    background:#83C9F4;
+  .box_button{
     border-radius:.3em;
     font-size:1rem;
-    color:white;
-    width:90%;
-    padding:1em;
+    width:40%;
+    height: 20%;
     box-sizing:border-box;
     border:none;
   }
-  input{
+ #MyRoomBtn{
+   width: 85%;
+   height: 7%;
+ }
+  .InputBase{
     margin-top: 5%;
     width:100%;
     border-radius:.3em;
@@ -52,17 +66,64 @@ body{
     margin-bottom:1em;
   }
 
-  .roommate{
-      width: 60%;
-      margin-bottom: 10%;
-      margin-top: 20%;
+.tooltip-inner {background-color: #7463b1 !important;}
+.bs-tooltip-bottom .arrow::before { border-bottom-color:#7463b1 !important; }
+
+  .desc{
+    width: 1%; 
+    height: 25px; 
+    margin-top: 20px; 
+    margin-left: 5px;
+  }
+  #roommate{
+      width: 85%;
+      margin-top: 20px;
+      margin-bottom: 50px;
+  }
+  .img_sm{
+    width: 15%;
+    margin-top: 20px;
+  }
+  .Percent_bar{
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 60%;
+    height: 5%;
+  }
+  .Percent_bar_color{
+    margin: 0px;
+    margin-left: -2.5%;
+    width: 105%;
+    height: 100%;
+
+  }
+  .input_color{
+    padding: 2px; 
+    width: 45px; 
+    height: 45px; 
+    margin-left: 20px;
+  }
+  .input_person{
+    margin-top: 20px; 
+    margin-left: 20px;
+  }
+  .btn_del{
+    height: 38px; 
+    margin-top: 20px; 
   }
 
-
-  #page-2{
+  #MyRoom, #Status,#Edit_Roommate,#Code_Room,#Join_Room,#Create_Room{
   display:none;
 }
-
+ #logo{
+  margin-top: 30px;
+  color: #fff; 
+  background: #436fd2;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: -20px;
+  border-radius: 25px;
+ }
 .btn-circle.btn-xl {
     top: 50%;
     left: 35%;
@@ -94,12 +155,168 @@ body{
     overflow: auto;
   }
 div.modal-content{
-    width: 20%;
+    width: 400px;
     margin: auto;
     margin-top: 5%;
 }
 
 .mt{
     margin-top: 5%;
-    width: 90%;
+    width: 40%;
 }
+
+select#select_top {
+  text-align: center;
+  text-align-last: center;
+}
+option#select_top{
+  text-align: left;
+  padding-left: 5%;
+}
+
+html{
+  
+  display:inline-block;
+  }
+  
+  button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  
+  td {
+    height:34px;
+    width:40px;
+  }
+  
+  body .calander {
+    height: 300px;
+    width: 320px;
+    margin:50px auto;
+    
+  }
+  
+  body .cal_head {
+    font-size: 20px;
+    background-color:#638eb1;
+    color:#FFFFFF;
+    font-weight:400;
+    height: 50px;
+    text-align: center;
+  }
+  
+  .cal_head span, .button_right,
+  .button_left{
+    
+    background-color: white;
+    border: none;
+    background-color:#638eb1;
+    color:#ffffff;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+   
+    
+    
+  }
+  
+  .button_right
+  {
+    float:right;
+  }
+  
+  body .cal_head .button_left
+  {
+    float:left;
+  }
+  
+  body .cal_body {
+    padding: 5px 5px 5px 5px;
+    height: 265px;
+    text-align: center;
+    background: #fff;
+  }
+  
+  body .cal_body .button {
+    background-color: white;
+    /* Green */
+    border: none;
+    color: black;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  
+  
+  body .cal_output {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding-top:5px;
+    height: 25px;
+    text-align: center;
+    color:#000000;
+    background: #fff;
+  }
+  
+  .circle {
+      border-radius: 50%;
+      
+      overflow:visible;
+      width: 36px;
+      height: 36px;
+      
+  
+  
+      background: #fff;
+      border: 1px solid #666;
+      text-align: center;
+  
+      
+  }
+  
+  
+  .paper-shadow-top-z-1 {
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,.16)
+  }
+  .paper-shadow-bottom-z-1 {
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)
+  }
+  .paper-shadow-top-z-2 {
+      box-shadow: 0 6px 20px 0 rgba(0,0,0,.19)
+  }
+  .paper-shadow-bottom-z-2 {
+      box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)
+  }
+  .paper-shadow-top-z-3 {
+      box-shadow: 0 17px 50px 0 rgba(0,0,0,.19)
+  }
+  .paper-shadow-bottom-z-3 {
+      box-shadow: 0 12px 15px 0 rgba(0,0,0,.24)
+  }
+  .paper-shadow-top-z-4 {
+      box-shadow: 0 25px 55px 0 rgba(0,0,0,.21)
+  }
+  .paper-shadow-bottom-z-4 {
+      box-shadow: 0 16px 28px 0 rgba(0,0,0,.22)
+  }
+  .paper-shadow-top-z-5 {
+      box-shadow: 0 40px 77px 0 rgba(0,0,0,.22)
+  }
+  .paper-shadow-bottom-z-5 {
+      box-shadow: 0 27px 24px 0 rgba(0,0,0,.2)
+  }
+  
+  
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
+  }
+
+  
