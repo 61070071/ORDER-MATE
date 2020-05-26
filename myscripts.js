@@ -32,18 +32,7 @@ var person = [
   }
 ];
 var human;
-const db = firebase.firestore();
-// ดัน
-db.collection("store").add({
-  nameRes: "aaa",
-  desc: "bbb",
-});
-// ดึง
-db.collection('store').get().then(snapshot => {
-  snapshot.forEach(doc => {
-    console.log(doc.data().nameRes)
-  });
-});
+
 //----------functions----------//
 
 function getMonthInfo(year, month) {
